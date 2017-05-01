@@ -28,7 +28,7 @@ public class CustomersActivity extends AppCompatActivity implements AdapterView.
         listView = (ListView) findViewById(R.id.listView);
         objects = new ArrayList<>();
 
-        FileBean cus1 = new FileBean(R.drawable.user, "John", "+91 99999 88888", "john@example.com", "Ludhiana");
+        /*FileBean cus1 = new FileBean(R.drawable.user, "John", "+91 99999 88888", "john@example.com", "Ludhiana");
         FileBean cus2 = new FileBean(R.drawable.user, "Jennie", "+91 88888 77777", "jennie@example.com", "Ludhiana");
         FileBean cus3 = new FileBean(R.drawable.user, "Joe", "+91 77777 66666", "joe@example.com", "Ludhiana");
         FileBean cus4 = new FileBean(R.drawable.user, "Jim", "+91 66666 55555", "jim@example.com", "Ludhiana");
@@ -41,7 +41,7 @@ public class CustomersActivity extends AppCompatActivity implements AdapterView.
         objects.add(cus4);
         objects.add(cus5);
         objects.add(cus6);
-
+*/
         adapter = new CustomersAdapter(this, R.layout.list_item, objects);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
@@ -56,5 +56,10 @@ public class CustomersActivity extends AppCompatActivity implements AdapterView.
 
     }
 
+    public void fab(View view) {
+        Intent intent = new Intent(CustomersActivity.this, AddCustomers.class);
+        startActivity(intent);
+        Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show();
     }
+}
 
